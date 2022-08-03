@@ -4,7 +4,7 @@
 # Shows the even numbers
 
 # take four input values into a tuple
-inputs = (input("Enter a number: "), input("Enter a number: "),  input("Enter a number: "), input("Enter a number: "))
+inputs = (int(input("Enter a number: ")), int(input("Enter a number: ")),  int(input("Enter a number: ")), int(input("Enter a number: ")))
 
 # Show how if and how many times the number 9 appears
 count = 0
@@ -29,6 +29,12 @@ for number in inputs:
 
 
 # Show the even numbers
+even_count = 0
+for number in inputs:
+    if number % 2 == 0:
+        print(number)
+
+
 
 
 
