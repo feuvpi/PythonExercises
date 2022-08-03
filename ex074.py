@@ -8,10 +8,13 @@ from numpy import random
 set = (f'{random.randint(100)}', f'{random.randint(100)}', f'{random.randint(100)}', f'{random.randint(100)}', f'{random.randint(100)}',)
 
 # display created numbers
+print("Generated values are:")
 print(set)
 
 # display minimum value
+print("Minimum value is:")
 print(min(set))
 
 # display maximum value
+print("Maximum value is:")
 print(max(set))
