@@ -7,22 +7,12 @@
 inputs = (int(input("Enter a number: ")), int(input("Enter a number: ")),  int(input("Enter a number: ")), int(input("Enter a number: ")))
 
 # Show how if and how many times the number 9 appears
-count = 0
-print(inputs)
-for number in inputs:
-    print(number)
-    if number == "9":
-        print(number)
-        count += 1
-if count == 0:
-    print("The tuple does not contains the value 9")
-else:
-    print(f'The value 9 appears in the tuple {count} times')
+print(f'The value 9 appears on the tuple {inputs.count(9)} times')
 
 # Show in what positions is value 3, if any
 start_index = 0
 for number in inputs:
-    if number == '3':
+    if number == 3:
         index = inputs.index(number, start_index)
         print(f'There is a value 3 at index {index}')
         start_index = index + 1
