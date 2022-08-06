@@ -3,3 +3,10 @@
 
 list = [int(input('Enter an int: ')), int(input('Enter an int: ')), int(input('Enter an int: ')),
         int(input('Enter an int: ')), int(input('Enter an int: ')),]
+
+print('-'*15)
+print(f'The list entered is: {list}')
+print('-'*15)
+print(f'The higest value was {max(list)} and its index is {list.index(max(list))}')
+print('-'*15)
+print(f'The lowest value was {min(list)} and its index is {list.index(min(list))}')
