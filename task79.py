@@ -8,11 +8,11 @@ for item in range(0, 5):
     while i > 0:
         new_item = int(input('Please enter a number: '))
         if new_item in list:
-            "Can not repeat values. Digit again."
+            print("Can not repeat values. Digit again.")
         else:
             list.append(new_item)
             break
 print('-'*15)
 print('The entered values are:')
+list.sort()
 print(list)
-print(list.sort())
