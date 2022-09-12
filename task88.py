@@ -3,6 +3,7 @@
 # 60 for each game, registering everything in a composite list.
 
 from random import randint
+from time import sleep
 
 games = (int(input('How many Lotto games do you want to generate? ')))
 
@@ -18,6 +19,7 @@ while(games > 0):
             set.append(num)
         if(len(set) >= 6):
             break
+    sleep(.7)
     print('---' * 10)
     print(set)
     games -= 1
