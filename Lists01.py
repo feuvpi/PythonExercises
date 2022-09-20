@@ -10,4 +10,3 @@ while True:
         break
     print('O numero precisa estar entre 0 e 20!')
 print(f'Você digitou o numero {cont[num]}')
-
