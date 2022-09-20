@@ -1,29 +1,21 @@
-# Develop a program that takes four input values and store it into a tuple.
-# Show if and how many times the value "9" shows up
-# Shows in what position is value "3", if any
-# Shows the even numbers
+# create a programa that let user enter five numeric values and inset them into a list at the right position
 
-# take four input values into a tuple
-inputs = (int(input("Enter a number: ")), int(input("Enter a number: ")),  int(input("Enter a number: ")), int(input("Enter a number: ")))
+listItems = []
+item = 0
+for item in range(0, 5):
+    new_item = int(input('Please enter a number: '))
+    if item == 0 or new_item > listItems[-1]:
+        listItems.append(new_item)
+    else:
+        pos = 0
+        while pos < len(listItems):
+            if new_item <= listItems[pos]:
+                listItems.insert(pos, new_item)
+                break
+            pos += 1
 
-# Show how if and how many times the number 9 appears
-print(f'The value 9 appears on the tuple {inputs.count(9)} times')
-
-# Show in what positions is value 3, if any
-start_index = 0
-for number in inputs:
-    if number == 3:
-        index = inputs.index(number, start_index)
-        print(f'There is a value 3 at index {index}')
-        start_index = index + 1
-
-
-# Show the even numbers
-even_count = 0
-for number in inputs:
-    if number % 2 == 0:
-        print(number)
-
+print('-+' * 15)
+print(listItems)
 
 
 

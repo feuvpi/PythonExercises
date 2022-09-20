@@ -1,35 +1,28 @@
+# Create a program that reads the name and two grades of several students and stores them all in a composite list.
+# At the end, show a report card containing the average of each one and allow the user to show the grades of each student individually.
 
-temp = []
-princ = []
-
-max = min = 0
+ficha = list()
 
 while True:
-    temp.append(str(input('Nome: ')))
-    temp.append(float(input('Peso: ')))
-    if len(princ) == 0:
-        max = min = temp[1]
-    else:
-        if temp[1] > max:
-            max = temp[1]
-        if temp[1] < min:
-            min = temp[1]
-    princ.append(temp[:])
-    temp.clear()
-    resp = str(input('Quer continuar? [S/N] '))
-    if resp in 'Nn':
-        break;
-
-
-print('---' * 15)
-print(f'Os dados foram {princ} ')
-print(f'{len(princ)} pessoas foram cadastradas.')
-
-print(f'O maior peso cadastrado foi {max}. Peso de:')
-for p in princ:
-    if p[1] == max:
-        print(f'{p[0]}')
-print(f'O menor peso cadastrado foi {min}. Peso de:')
-for p in princ:
-    if p[1] == min:
-        print(f'{p[0]}')
+    name = str(input('Name: '))
+    grade1 = float(input('Grade 1: '))
+    grade2 = float(input('Grade 2: '))
+    mean = (grade1 + grade2) / 2
+    ficha.append([name, [grade1, grade2], mean])
+    cont = str(input('Do you want to continue? [Y/N]'))
+    if cont in 'Nn':
+        break
+print('--*--' * 30)
+print(f'{"No.":<4}{"NAME:":<10}{"MEAN:":>8}')
+print('---'*15)
+for i, a in enumerate(ficha):
+    print(f'{i:<4}{a[0]:<10}{a[2]:>8.1f}')
+while True:
+    print('-'*45)
+    opc = int(input('Choose a student to show grades. (999 ends program): '))
+    if opc == 999:
+        print('TERMINATING.')
+        break
+    if opc <= len(ficha) -1:
+        print(f'{ficha[opc][0]}`s grades: {ficha[opc][1]}')
+print('SESSION ENDED.')

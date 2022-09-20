@@ -1,24 +1,39 @@
-# A program that take various number inputs and organize them in a lista.
-# How many numbers were entered?
-# List in descending order
-# if number 5 was inserted or not
+# Python Exercise 087: Improve the previous challenge by showing at the end:
+# A) The sum of all even value entered.
+# B) The sum of the values in the third column.
+# C) The largest value of the second row.
 
-listItems = []
-continueProgram = True
-while True:
-    listItems.append(int(input('Please enter a number: ')))
-    print('Do you want to continue?')
-    answer = str(input('do you want to continue? Type N ir n for No.'))
-    if answer in 'Nn':
-        break
+matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-print(f'You entered {len(listItems)} elements.')
-print("--" * 15)
-print('Entered list in descending order:')
-listItems.sort(reverse=True)
-print(listItems)
-print('-' * 15)
-if 5 in listItems:
-    print('the value 5 is in ListItems')
-else:
-    print('The number 5 is not in ListItems')
+sumevens = max = sumcol = 0
+
+
+for r in range(0,3):
+    for c in range(0, 3):
+        matrix[r][c] = int(input(f'Enter a number for position [{r}, {c}]: '))
+
+print('---' * 15)
+for r in range(0,3):
+    for c in range(0,3):
+        if matrix[r][c] % 2 == 0:
+            sumevens += matrix[r][c]
+        print(f'[{matrix[r][c]:^5}]', end='')
+    print()
+
+print('---' * 15)
+print(f'A: The sum of all even values: {sumevens}')
+
+print('---' * 15)
+
+for r in range(0,3):
+    sumcol += matrix[r][2]
+print(f'B: The sum of third column values: {sumcol}')
+
+print('---' * 15)
+
+for c in range(0,3):
+    if(matrix[1][c] > max):
+        max = matrix[1][c]
+print(f'C: The largest value of the second row: {max}')
+
+

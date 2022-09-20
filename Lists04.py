@@ -1,14 +1,24 @@
-## Create a little program thar has products and its prices stored in a tuple.
-# At the end, show a price listing, organizing the data in tabular form.
+# A program that take various number inputs and organize them in a lista.
+# How many numbers were entered?
+# List in descending order
+# if number 5 was inserted or not
 
-products = ('bananas', 2.40, 'apples', 4.50, 'potatoes', 3.00, 'bread', 1.50)
+listItems = []
+continueProgram = True
+while True:
+    listItems.append(int(input('Please enter a number: ')))
+    print('Do you want to continue?')
+    answer = str(input('do you want to continue? Type N ir n for No.'))
+    if answer in 'Nn':
+        break
 
-print('-'*20)
-print('Product Listing:')
-print('-'*20)
-for pos in range(0, len(products)):
-    if pos % 2 == 0:
-        print(f'{products[pos]:.<30}', end='')
-    else:
-        print(f'{products[pos]:>2}')
-
+print(f'You entered {len(listItems)} elements.')
+print("--" * 15)
+print('Entered list in descending order:')
+listItems.sort(reverse=True)
+print(listItems)
+print('-' * 15)
+if 5 in listItems:
+    print('the value 5 is in ListItems')
+else:
+    print('The number 5 is not in ListItems')

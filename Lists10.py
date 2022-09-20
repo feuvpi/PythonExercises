@@ -1,28 +1,30 @@
-## Build a little program that can read various number inputs and organize them into a list. Then the program should create
-## two new separates list for even and odd numbers.
+# Write a program that helps a LOTTO player to create guesses.
+# The program will ask how many games will be generated and will draw 6 numbers between 1 and
+# 60 for each game, registering everything in a composite list.
 
-listItems = []
-continueProgram = True
-while True:
-    listItems.append(int(input('Please enter a number: ')))
-    answer = str(input('do you want to continue? Type N ir n for No: '))
-    if answer in 'Nn':
-        break
+from random import randint
+from time import sleep
+
+games = (int(input('How many Lotto games do you want to generate? ')))
+
+cont = 0
+set = []
+
+print('----- LOTTO GAMES -----')
+while(games > 0):
+    set = []
+    while True:
+        num = randint(1,60)
+        if num not in set:
+            set.append(num)
+        if(len(set) >= 6):
+            break
+    sleep(.7)
+    print('---' * 10)
+    print(set)
+    games -= 1
+print('---' * 10)
+print('--- GOOD LUCK! ---')
 
 
-odds = []
-evens = []
 
-for number in listItems:
-    if number % 2 == 0:
-        evens.append(number)
-    else:
-        odds.append(number)
-evens.sort()
-odds.sort()
-print('-'* 15)
-print('Even values:')
-print(evens)
-print('-'* 15)
-print('Odd values:')
-print(odds)

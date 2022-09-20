@@ -1,23 +1,15 @@
-# create a programa that let user enter five numeric values and inset them into a list at the right position
+# Create a program that declares a 3×3 dimensional matrix and fills it with values
+# read from the keyboard. At the end, show the matrix on the screen, with the correct formatting.
 
-listItems = []
-item = 0
-for item in range(0, 5):
-    new_item = int(input('Please enter a number: '))
-    if item == 0 or new_item > listItems[-1]:
-        listItems.append(new_item)
-    else:
-        pos = 0
-        while pos < len(listItems):
-            if new_item <= listItems[pos]:
-                listItems.insert(pos, new_item)
-                break
-            pos += 1
+matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-print('-+' * 15)
-print(listItems)
+for r in range(0,3):
+    for c in range(0, 3):
+        matrix[r][c] = int(input(f'Enter a number for position [{r}, {c}]: '))
 
-
-
-
+print('---' * 15)
+for r in range(0,3):
+    for c in range(0,3):
+        print(f'[{matrix[r][c]:^5}]', end='')
+    print()
 
