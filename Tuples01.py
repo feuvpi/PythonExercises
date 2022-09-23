@@ -1,6 +1,5 @@
-## Crie um programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, de zero até vinte.
+## Create a program that has a fully populated tuple with a count in words from zero to twenty.
 
-## criando a tupla
 cont = ('zero', 'um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove',
         'dez', 'onze', 'doze', 'treze', 'catorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove', 'vinte')
 
